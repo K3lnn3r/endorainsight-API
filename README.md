@@ -9,4 +9,15 @@ API pública para triagem e classificação de risco psicossocial com base em li
 - `GET /docs`
 
 Deploy: https://endorainsight-api.vercel.app
+swagger.json
 
+
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/docs",
+      "destination": "/index.html"
+    }
+  ]
+}
