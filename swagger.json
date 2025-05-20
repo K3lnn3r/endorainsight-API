@@ -1,115 +1,18 @@
-{
-  "openapi": "3.0.0",
-  "info": {
-    "title": "Endora Insight API",
-    "description": "API para detecção de risco psicossocial com base em linguagem natural.",
-    "version": "1.0.0"
-  },
-  "paths": {
-    "/analyze-text": {
-      "post": {
-        "summary": "Analisar texto e retornar score de risco psicossocial",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "text": {
-                    "type": "string",
-                    "example": "Estou me sentindo exausto e sem motivação para continuar."
-                  },
-                  "language": {
-                    "type": "string",
-                    "example": "pt-BR"
-                  }
-                },
-                "required": ["text"]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Resultado da análise",
-            "content": {
-              "application/json": {
-                "example": {
-                  "risk_score": 85,
-                  "nivel": "alto",
-                  "marcadores": ["exausto", "sem motivação"],
-                  "explicacao": "Expressões compatíveis com sofrimento psíquico significativo."
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-{
-  "openapi": "3.0.0",
-  "info": {
-    "title": "Endora Insight API",
-    "description": "API para detecção de risco psicossocial com base em linguagem natural.",
-    "version": "1.0.0"
-  },
-  "paths": {
-    "/analyze-text": {
-      "post": {
-        "summary": "Analisar texto e retornar score de risco psicossocial",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "text": {
-                    "type": "string",
-                    "example": "Estou me sentindo exausto e sem motivação para continuar."
-                  },
-                  "language": {
-                    "type": "string",
-                    "example": "pt-BR"
-                  }
-                },
-<<<<<<< HEAD
-                "required": [
-                  "text"
-                ]
-=======
-                "required": ["text"]
->>>>>>> a5ace4e024b03dfa4e946b4d32e3a2814168c551
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Resultado da análise",
-            "content": {
-              "application/json": {
-                "example": {
-                  "risk_score": 85,
-                  "nivel": "alto",
-<<<<<<< HEAD
-                  "marcadores": [
-                    "exausto",
-                    "sem motivação"
-                  ],
-=======
-                  "marcadores": ["exausto", "sem motivação"],
->>>>>>> a5ace4e024b03dfa4e946b4d32e3a2814168c551
-                  "explicacao": "Expressões compatíveis com sofrimento psíquico significativo."
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+{"text": {
+  "type": "string",
+  "example": "Estou me sentindo exausto e sem motivação para continuar."
+},
+"language": {
+  "type": "string",
+  "example": "pt-BR"
+},
+"required": [
+  "text"
+]
+"risk_score": 85,
+"nivel": "alto",
+"marcadores": [
+  "exausto",
+  "sem motivação"
+],
+"explicacao": "Expressões compatíveis com sofrimento psíquico significativo."
