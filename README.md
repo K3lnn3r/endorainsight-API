@@ -72,8 +72,7 @@ Acesse a interface interativa da documentação da API:
 Se seu `README.md` atual tiver trechos assim:
 
 ```markdown
-<<<<<<< HEAD
-// uma versão
+
 =======
  // outra versão
 >>>>>>> a5ace4e0...
