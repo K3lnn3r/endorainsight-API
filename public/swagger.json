@@ -1,0 +1,137 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Endora Insight API",
+    "description": "API para triagem e classificação de risco psicossocial com base em linguagem natural.",
+    "version": "1.1.0"
+  },
+  "tags": [
+    {
+      "name": "Análise de Texto",
+      "description": "Classificação automatizada de risco psicossocial a partir de linguagem natural"
+    },
+    {
+      "name": "Recuperação de Score",
+      "description": "Consulta de análises já processadas"
+    }
+  ],
+  "paths": {
+    "/analyze-text": {
+      "post": {
+        "tags": [
+          "Análise de Texto"
+        ],
+        "summary": "Analisar texto e retornar score de risco psicossocial",
+        "operationId": "analyzeText",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Resultado da análise",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyzeResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-score": {
+      "get": {
+        "tags": [
+          "Recuperação de Score"
+        ],
+        "summary": "Recuperar análise existente por ID",
+        "operationId": "getScoreById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Identificador único da análise"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Análise recuperada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyzeResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Análise não encontrada"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalyzeRequest": {
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "example": "Estou me sentindo exausto e sem motivação para continuar."
+          },
+          "language": {
+            "type": "string",
+            "example": "pt-BR"
+          }
+        }
+      },
+      "AnalyzeResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "abc123"
+          },
+          "risk_score": {
+            "type": "integer",
+            "example": 85
+          },
+          "nivel": {
+            "type": "string",
+            "example": "alto"
+          },
+          "marcadores": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "exausto",
+              "sem motivação"
+            ]
+          },
+          "explicacao": {
+            "type": "string",
+            "example": "Expressões compatíveis com sofrimento psíquico significativo."
+          }
+        }
+      }
+    }
+  }
+}

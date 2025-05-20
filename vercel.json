@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/docs",
+      "destination": "/index.html",
+      "permanent": true
+    }
+  ]
+}
+
