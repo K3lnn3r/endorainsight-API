@@ -25,9 +25,13 @@
                     "example": "pt-BR"
                   }
                 },
+<<<<<<< HEAD
                 "required": [
                   "text"
                 ]
+=======
+                "required": ["text"]
+>>>>>>> a5ace4e024b03dfa4e946b4d32e3a2814168c551
               }
             }
           }
@@ -40,10 +44,14 @@
                 "example": {
                   "risk_score": 85,
                   "nivel": "alto",
+<<<<<<< HEAD
                   "marcadores": [
                     "exausto",
                     "sem motivação"
                   ],
+=======
+                  "marcadores": ["exausto", "sem motivação"],
+>>>>>>> a5ace4e024b03dfa4e946b4d32e3a2814168c551
                   "explicacao": "Expressões compatíveis com sofrimento psíquico significativo."
                 }
               }
