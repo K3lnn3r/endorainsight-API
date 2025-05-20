@@ -51,6 +51,44 @@
           }
         }
       }
+    },
+    "/get-score": {
+      "get": {
+        "summary": "Recuperar análise existente por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Identificador único da análise"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Análise recuperada com sucesso",
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": "abc123",
+                  "risk_score": 72,
+                  "nivel": "moderado",
+                  "marcadores": [
+                    "cansaço",
+                    "apatia"
+                  ],
+                  "explicacao": "Expressões compatíveis com sofrimento psíquico leve a moderado."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Análise não encontrada"
+          }
+        }
+      }
     }
   }
 }
